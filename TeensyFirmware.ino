@@ -18,7 +18,7 @@ ros::Publisher chatter("chatter", &str_msg);
 int kill_pin = 2;
 unsigned long duration = 0;
 
-void messageDrive( const drive_msgs::drive_values& pwm )
+void messageDrive( const ac_msgs::drive_values& pwm )
 {
 //  Serial.print("Pwm drive : ");
 //  Serial.println(pwm.pwm_drive);
@@ -76,7 +76,7 @@ void messageEmergencyStop( const std_msgs::Bool& flag )
 }
 
 
-ros::Subscriber<drive_msgs::drive_values> sub_drive("drive_pwm", &messageDrive );
+ros::Subscriber<ac_msgs::drive_values> sub_drive("drive_pwm", &messageDrive );
 ros::Subscriber<std_msgs::Bool> sub_stop("eStop", &messageEmergencyStop );
 
 
